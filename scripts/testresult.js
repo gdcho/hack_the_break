@@ -5,7 +5,7 @@ function displayScoreInfo() {
     if (user != null) {
       currentUser = db.collection("users").doc(user.uid);
       currentUser.get().then((userDoc) => {
-        var userscore = userDoc.data().school;
+        var userscore = userDoc.data().totalscore;
         // test use school data instead of scrore data
         if (userscore != null) {
           document.getElementById("userscore").innerHTML = userscore;
@@ -17,3 +17,7 @@ function displayScoreInfo() {
   });
 }
 displayScoreInfo();
+
+function displayComment() {
+    
+}

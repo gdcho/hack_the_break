@@ -230,34 +230,7 @@ function writeQuestions() {
   });
 }
 
-// function writeQuestions2() {
-//     var questionsRef = db.collection("questions");
-// questionsRef.add({
-//     id: "q002",
-//     question:
-//       "I can give the impression that I’m more competent than I really am.",
-//     answer: [
-//       { text: "1 (not all true)", points: 1 },
-//       { text: "2 (rarely)", points: 2 },
-//       { text: "3 (sometimes)", points: 3 },
-//       { text: "4 (often)", points: 4 },
-//       { text: "5 (very true)", points: 5 },
-//     ],
-//   });
-//   questionsRef.add({
-//     id: "q003",
-//     question:
-//       "I avoid evaluations if possible and have a dread of others evaluating me.",
-//     answer: [
-//       { text: "1 (not all true)", points: 1 },
-//       { text: "2 (rarely)", points: 2 },
-//       { text: "3 (sometimes)", points: 3 },
-//       { text: "4 (often)", points: 4 },
-//       { text: "5 (very true)", points: 5 },
-//     ],
-//   });
-// }
-//   writeQuestions2();
+
 
 //------------------------------------------------------------------------------
 // Input parameter is a string representing the collection we are reading from
