@@ -66,4 +66,7 @@ EDIT ON
     background-color: #109DB9;
     margin-left: 90px; /* Add this property to move the button to the right */
   }
+  .sentence2 {
+    margin: 0 40px; /* 10px의 좌우 마진 추가 */
+  }
   
