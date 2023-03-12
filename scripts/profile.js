@@ -45,11 +45,13 @@ function saveUserInfo() {
     })
     .then(() => {
         console.log("User information updated successfully.");
-    })
-    .catch((error) => {
-        console.error("Error updating user information: ", error);
-    });
-
+        // modal
+        const modal = document.getElementById('myModal');
+        modal.style.display = "block";
+        setTimeout(function(){
+            modal.style.display = "none";
+        }, 2000); 
+    })    
     document.getElementById('personalInfoFields').disabled = true;
 }
 
@@ -83,14 +85,11 @@ firebase.auth().onAuthStateChanged((user) => {
             listItems.push(li);
           });
   
-          // Reverse the order of the list items and insert them at the top of the list
+          // Reverse the list order
           listItems.reverse().forEach((li) => {
             collectionList.insertBefore(li, collectionList.firstChild);
           });
         })
-        .catch((error) => {
-          console.error("Error getting records: ", error);
-        });
     }
   });
   

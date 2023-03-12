@@ -1,0 +1,26 @@
+#collection-list {
+    margin-left: -5%;
+  }
+  
+
+#collection-list li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    list-style-type: none;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    margin-right: 3%;
+    border-radius: 3%;
+    list-style-position: inside;
+    background-color: #0ECAF0;
+    border: none;
+    color: white;
+    transition: 1s;
+
+  }
+  
+  #collection-list li:hover{
+    color: #1B1212;
+  }
+
