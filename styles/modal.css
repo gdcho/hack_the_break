@@ -23,5 +23,9 @@
 }
 
 .modal-content p{
-  font-size:large;
+  font-size: 12pt;
+}
+
+.modal-content small {
+  color: grey;
 }

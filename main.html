@@ -66,13 +66,14 @@
     <!-- the body of your page goes here -->
     <!-- stuff -->
     <div class="container-fluid mt-5 text-dark">
-      <div class="container p-4">
+      <div class="container p-4 container-box">
         <h1 class="display-10">Hello, <span id="name-goes-here">Name</span></h1>
         <hr />
-        <p>Quote of the day:
-            <br>
-            <span id="quote-goes-here"></span>
-        </p>
+        <p id="quote-daily">Quote of the day:</p>
+        <br>
+        <img id="quotation-mark" src="./images/quotationmark.png" alt="quotation-mark">
+        <span id="quote-goes-here"></span>
+        <hr>
       </div>
     </div>
     <br>
@@ -87,9 +88,13 @@
     <div class="modal" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Instructions: For each statement, please put the number in the box that best indicates how true the statement is of you.  
-          It is best to give the first response that enters your mind rather than dwelling on each statement and thinking about it over and over. </p>
-        <small>Click anywhere to continue</small>
+        <p>Instructions</p>
+        <p>
+          For each statement, please put the number in the box that best indicates how true the statement is of you.  
+          It is best to give the first response that enters your mind rather than dwelling on each 
+          statement and thinking about it over and over. 
+        </p>
+        <small id="modal-small">Click anywhere to continue</small>
       </div>
     </div>
 

@@ -11,15 +11,23 @@
  *-------------------------------------
  */
 
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
 
 .responsive {
-    width: 100%;
-    height: auto;
-  }
+  width: 100%;
+  height: auto;
+}
 
 /* ---------------------- */
 /* NAV BAR                */
@@ -43,14 +51,66 @@
 
 .start-btn {
   border-radius: 4px;
-  background-color: #B91048;
+  background-color: #b91048;
   border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
+  color: #ffffff;
+  font-size: 25px;
   padding: 20px;
   width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
+  transition: all 0.9s;
+}
+
+/* ---------------------- */
+/* TEST RESULT            */
+/* ---------------------- */
+
+.userscore {
+  font-size: 25pt;
+  font-weight: bold;
+  color: rgba(16, 185, 129);
+}
+
+.comment-box {
+  font-size: 11pt;
+  /* font-kerning: normal; */
+  line-height: 14pt;
+}
+
+.last-comment-box {
+  background: rgba(16, 185, 129, 0.6);
+  font-size: 10pt;
+  padding: 3%;
+  margin: 10%;
+  line-height: 14pt;
+  font-kerning: normal;
+}
+
+.save-btn {
+  background-color: #109db9;
+  border: none;
+}
+
+/* ---------------------- */
+/* QUOTE OF THE DAY       */
+/* ---------------------- */
+
+#quote-daily {
+  font-size: 10pt;
+  color: grey;
+}
+#quote-goes-here {
+  bottom: 8px;
+  font-size: 25pt;
+  line-height: 35pt;
+  color: grey;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#quotation-mark {
+  position: absolute;
+  left: 150px;
+  top: 300px;
+  z-index: -1;
+  opacity: 0.1;
+  height: 10em;
 }
