@@ -1,0 +1,61 @@
+/* Radio button container */
+.form-check {
+    margin: 0.5rem 0;
+  }
+  
+  .form-check-input[type="radio"] {
+    margin-right: 0.5rem;
+    font-size: 1.3rem; /* increase the font size */
+    outline: red;
+  }
+  
+  /* Inline radio buttons */
+  .form-check-inline {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  
+  .form-check label {
+    margin-top: 0.5rem;
+  }
+  
+  /* Radio button selected state */
+  .form-check-input[type="radio"]:checked + .form-check-label {
+    font-weight: bold;
+    outline-color: green;
+  }
+  
+  /* Radio button focus state */
+  .form-check-input[type="radio"]:focus {
+    outline-color: green;
+  }
+  
+  .container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+  }
+  
+  .d-flex {
+    flex-wrap: wrap; /* Allow elements to wrap to the next line */
+  }
+  
+  #questions-form {
+    margin-bottom: 30%;
+    width: 100%; /* Set the width to 100% to fill the container */
+  }
+  
+  #navigation-container {
+    text-align: center;
+  }
+  
+  #prev-button, #next-button, #submit-button {
+    margin: 30px;
+    font-size: 1.25rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    background-color: #109DB9;
+  }
+  

@@ -2,16 +2,18 @@ var currentQuestionIndex = 0;
 var questionsPerPage = 5;
 var currentPageIndex = 0;
 var submitButton = null;
+var prevButton = document.getElementById("prev-button");
+var nextButton = document.getElementById("next-button");
 
 function retrieveQuestions() {
   db.collection("questions").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       var question = doc.data().question;
-      var answers = [        doc.data().answer01,        doc.data().answer02,        doc.data().answer03,        doc.data().answer04,        doc.data().answer05,      ];
+      var answers = [doc.data().answer01, doc.data().answer02, doc.data().answer03, doc.data().answer04, doc.data().answer05];
 
       //Radio button for each question
       var questionForm = document.createElement("form");
-      questionForm.innerHTML = "<p>" + question + "</p>";
+      questionForm.innerHTML = "<p><br>" + question + "</p>";
       for (var i = 0; i < answers.length; i++) {
         var radioInput = document.createElement("input");
         radioInput.type = "radio";
@@ -25,8 +27,8 @@ function retrieveQuestions() {
 
         var formCheck = document.createElement("div");
         formCheck.classList.add("form-check", "form-check-inline");
-        formCheck.appendChild(radioInput);
         formCheck.appendChild(label);
+        formCheck.appendChild(radioInput);
         questionForm.appendChild(formCheck);
       }
 
@@ -34,8 +36,14 @@ function retrieveQuestions() {
       questionForm.classList.add("question");
     });
     showQuestions(0);
+
+    // Move navigationContainer below radio buttons
+    var navigationContainer = document.getElementById("navigation-container");
+    var lastQuestionForm = document.querySelector(".question:last-of-type");
+    lastQuestionForm.parentNode.insertBefore(navigationContainer, null);
   });
 }
+
 
 function showQuestions(startIndex) {
   var questions = document.querySelectorAll(".question");
@@ -48,6 +56,13 @@ function showQuestions(startIndex) {
     }
   }
   updateNavigation(startIndex, endIndex, questions.length);
+
+  if (startIndex == 0) {
+    prevButton.style.display = "none";
+  } else {
+    prevButton.style.display = "inline-block";
+  }
+  
 }
 
 function updateNavigation(startIndex, endIndex, totalQuestions) {
