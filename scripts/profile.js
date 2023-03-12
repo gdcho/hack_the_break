@@ -106,7 +106,7 @@ function logout() {
         document.getElementById("myModal").style.display = "none";
         // main.html 로 이동
         window.location.href = "index.html";
-      }, 3000);
+      }, 2000);
     })
     .catch((error) => {
       // An error happened.
