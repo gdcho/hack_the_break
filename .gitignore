@@ -2,5 +2,6 @@
 *.logs
 node_modules/
 .vscode/
-firebaseAPI_template
+firebaseAPI_TEAM99.js
+
 

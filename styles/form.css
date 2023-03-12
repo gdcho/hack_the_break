@@ -1,57 +1,55 @@
-/* Radio button container */
 .form-check {
     display: flex;
-    align-items: center; /* center the items vertically */
+    align-items: center;
     margin-left:5%;
   }
   
-  .form-check-input:checked {
+.form-check-input:checked {
     background-color: #0dfd71;
-        border-color: #00ff64;
-    }
+    border-color: #00ff64;
+  }
     
-    .form-check-input[type="radio"] {
-        margin-right: 0.5rem;
-        font-size: 1.3rem; /* increase the font size */
-      }
-  
-  /* Inline radio buttons */
-  .form-check-inline {
-    display: inline-block;
+.form-check-input[type="radio"] {
+    margin-right: 0.5rem;
+    font-size: 1.3rem; 
   }
   
-  .form-check-label {
-    margin-left: 0.05rem;
-  }
+.form-check-inline {
+  display: inline-block;
+}
+  
+.form-check-label {
+  margin-left: 0.05rem;
+}
 
-  .form-check-input {
-    border: 2px solid rgba(16, 185, 129);
-  }
+.form-check-input {
+  border: 2px solid rgba(16, 185, 129);
+}
   
 
-  #questions-form {
-    margin-bottom: 30%;
-    margin-left: 3%;
-    margin-right: 3%;
-    width: 100%; /* Set the width to 100% to fill the container */
-  }
+#questions-form {
+  margin-bottom: 30%;
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 100%; 
+}
   
-  #navigation-container {
-    text-align: center;
-  }
+#navigation-container {
+  text-align: center;
+}
   
-  #prev-button, #next-button, #submit-button {
-    margin-top: 15%;
-    margin-bottom: 5%;
-    margin-left: 6%;
-    margin-right: 6%;
-    font-size: 1.25rem;
-    padding: 0.3rem 1rem;
-    border-radius: 0.25rem;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    color: #fff;
-    background-color: #109DB9;
-  }
+#prev-button, #next-button, #submit-button {
+  margin-top: 15%;
+  margin-bottom: 5%;
+  margin-left: 6%;
+  margin-right: 6%;
+  font-size: 1.25rem;
+  padding: 0.3rem 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  background-color: #109DB9;
+}
   

@@ -44,7 +44,7 @@ function retrieveQuestions() {
   });
 }
 
-
+//show question based on index
 function showQuestions(startIndex) {
   var questions = document.querySelectorAll(".question");
   var endIndex = Math.min(startIndex + questionsPerPage, questions.length);
@@ -57,13 +57,24 @@ function showQuestions(startIndex) {
   }
   updateNavigation(startIndex, endIndex, questions.length);
 
+  if (startIndex < questions.length - questionsPerPage) {
+    nextButton.style.display = "inline-block";
+  } else {
+    nextButton.style.display = "none";
+  }
+
   if (startIndex == 0) {
     prevButton.style.display = "none";
   } else {
     prevButton.style.display = "inline-block";
   }
-  
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
+
 
 function updateNavigation(startIndex, endIndex, totalQuestions) {
   var prevButton = document.getElementById("prev-button");
@@ -75,7 +86,7 @@ function updateNavigation(startIndex, endIndex, totalQuestions) {
     submitButton.parentNode.removeChild(submitButton);
   }
 
-  if (endIndex == totalQuestions) {
+  if (startIndex + questionsPerPage >= totalQuestions) {
     submitButton = document.createElement("button");
     submitButton.innerHTML = "Submit";
     submitButton.id = "submit-button";
@@ -89,6 +100,8 @@ function updateNavigation(startIndex, endIndex, totalQuestions) {
     nextButton.style.display = "inline-block";
   }
 }
+
+
 
 function onNext() {
   currentQuestionIndex += questionsPerPage;
@@ -146,7 +159,6 @@ function submitAnswers() {
     alert("Please answer all questions before submitting.");
   }
 }
-
 
 // Call retrieveQuestions() on page load
 window.onload = retrieveQuestions;
