@@ -1,17 +1,26 @@
-
-function readQuote(day) {
-  db.collection("quotes").doc(day)                                                      //name of the collection and documents should matach excatly with what you have in Firestore
-    .onSnapshot(tuesdayDoc => {                                                               //arrow notation
-         console.log("current document data: " + tuesdayDoc.data());                          //.data() returns data object
-         document.getElementById("quote-goes-here").innerHTML = tuesdayDoc.data().quote;      //using javascript to display the data on the right place
-         
-         //Here are other ways to access key-value data fields
-         //$('#quote-goes-here').text(tuesdayDoc.data().quote);         //using jquery object dot notation
-         //$("#quote-goes-here").text(tuesdayDoc.data()["quote"]);      //using json object indexing
-         //document.querySelector("#quote-goes-here").innerHTML = tuesdayDoc.data().quote;
+function getRandomQuote() {
+  const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursady', 'friday', 'saturday'];
+  const randomIndex = Math.floor(Math.random() * daysOfWeek.length);
+  const randomDay = daysOfWeek[randomIndex];
+  
+  db.collection("quotes").doc(randomDay)
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        const quote = doc.data().quote;
+        document.getElementById("quote-goes-here").innerHTML = quote;
+      } else {
+        console.log("No such document!");
+      }
     })
+    .catch((error) => {
+      console.log("Error getting document:", error);
+    });
 }
-readQuote("tuesday");        //calling the function
+
+// 호출해서 랜덤 명언을 표시할 요소가 있을 때
+getRandomQuote();
+
 function insertNameFromFirestore() {
   //check if user is logged in
   firebase.auth().onAuthStateChanged((user) => {
@@ -30,6 +39,7 @@ function insertNameFromFirestore() {
     }
   });
 }
+
 insertNameFromFirestore();
 
 function writeQuestions() {
