@@ -48,14 +48,20 @@ EDIT ON
       border-color: transparent
     }
   }
-  .btn-warning {
-    color: #ffffff;
-    background-color: #0d6efd;
-    border-color: #0d6efd;
+  #indexbt {
+    width: 150px; /* set the width of the button */
+    height: 50px; /* set the height of the button */
+    display: flex; /* set the display property to flex */
+    align-items: center; /* center the button vertically */
+    justify-content: center; /* center the button horizontally */
+    font-size: 1rem;
+    padding: 0;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    background-color: #109DB9;
+    margin-left: 90px; /* Add this property to move the button to the right */
   }
-  .sentence1{
-    font-size: 1.5rem;
-  }
-  .sentence2{
-    font-size: 1.3rem;
-  }
+  
