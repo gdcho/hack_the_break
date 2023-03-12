@@ -1,4 +1,11 @@
-
+/* ---------------------- */
+/* BOX SIZING RULE        */
+/* ---------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 /*-------------------------------------
  * customize material design icon sizes 
  *-------------------------------------
@@ -13,3 +20,23 @@
     width: 100%;
     height: auto;
   }
+
+/* ---------------------- */
+/* NAV BAR                */
+/* ---------------------- */
+
+.navbar {
+  background-color: #10b981;
+  color: white;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.navbar a:hover {
+  color: blue;
+}
