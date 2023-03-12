@@ -50,8 +50,9 @@
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Noto+Serif+Lao&family=Roboto&display=swap" rel="stylesheet">    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
   </head>
 
   <body>
@@ -61,21 +62,21 @@
 
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
-    <div class="container-fluid">
-      <img class="mt-5" src="/images/drink1.jpg" alt="image" />
-    </div>
     <!-- the body of your page goes here -->
     <!-- stuff -->
-    <div class="container-fluid text-dark">
+    <div class="container-fluid mt-5 text-dark">
       <div class="container p-4">
         <h1 class="display-10">Hello, <span id="name-goes-here">Name</span></h1>
         <hr />
-        <p>Quote of the day:<span id="quote-goes-here"></span></p>
+        <p>Quote of the day:
+            <br>
+            <span id="quote-goes-here"></span>
+        </p>
       </div>
     </div>
     <br>
     <div class="container text-center">
-      <button type="button" class="btn btn-primary btn-lg btn-block back-btn start-btn"
+      <button type="button" class="btn btn-lg btn-block back-btn start-btn"
       id="myBtn">
         START TEST
       </button>

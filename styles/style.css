@@ -42,9 +42,15 @@
 }
 
 .start-btn {
-  color: white;
+  border-radius: 4px;
   background-color: #B91048;
-  width: 10em;
-  height: 3em;
   border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
