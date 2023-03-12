@@ -61,7 +61,7 @@ firebase.auth().onAuthStateChanged((user) => {
       db.collection("records")
         .where("userId", "==", userId)
         .orderBy("timestamp", "desc")
-        .limit(5)
+        .limit(4)
         .get()
         .then((querySnapshot) => {
           const collectionList = document.querySelector("#collection-list");
