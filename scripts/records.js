@@ -6,12 +6,17 @@ firebase.auth().onAuthStateChanged((user) => {
         .get()
         .then((querySnapshot) => {
           const collectionList = document.querySelector("#collection-list");
+          const listItems = [];
           querySnapshot.forEach((doc) => {
-            // create a new list item element for each record
             const li = document.createElement("li");
-            // set the text content of the list item to the record data
-            li.textContent = JSON.stringify(doc.data());
-            // append the list item to the collection list element
+            const timestamp = new Date(doc.data().timestamp.seconds * 1000);
+            const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false };
+            const formattedTimestamp = timestamp.toLocaleString('en-US', options);
+            const totalScore = doc.data().totalScore;
+            li.textContent = `${formattedTimestamp} - Score: ${totalScore}`;
+            listItems.push(li);
+          });
+          listItems.reverse().forEach((li) => {
             collectionList.appendChild(li);
           });
         })
@@ -20,3 +25,4 @@ firebase.auth().onAuthStateChanged((user) => {
         });
     }
   });
+  
