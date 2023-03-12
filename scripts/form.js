@@ -9,7 +9,7 @@ function retrieveQuestions() {
       var question = doc.data().question;
       var answers = [        doc.data().answer01,        doc.data().answer02,        doc.data().answer03,        doc.data().answer04,        doc.data().answer05,      ];
 
-      // Create radio button form for each question
+      //Radio button for each question
       var questionForm = document.createElement("form");
       questionForm.innerHTML = "<p>" + question + "</p>";
       for (var i = 0; i < answers.length; i++) {
@@ -56,12 +56,10 @@ function updateNavigation(startIndex, endIndex, totalQuestions) {
   prevButton.disabled = startIndex == 0;
   nextButton.disabled = endIndex == totalQuestions;
 
-  // Remove submit button if it exists
   if (submitButton && submitButton.parentNode) {
     submitButton.parentNode.removeChild(submitButton);
   }
 
-  // Add submit button if on last page
   if (endIndex == totalQuestions) {
     submitButton = document.createElement("button");
     submitButton.innerHTML = "Submit";
@@ -92,7 +90,7 @@ function onPrev() {
 function submitAnswers() {
     var forms = document.querySelectorAll("form");
     
-    // Loop through each form/question and get the selected answer's value (points)
+    //Update score
     var totalScore = 0;
     var allAnswered = true; 
     for (var i = 0; i < forms.length; i++) {
@@ -101,14 +99,14 @@ function submitAnswers() {
         var points = parseInt(selectedAnswer.value);
         totalScore += points;
       } else {
-        allAnswered = false; // false is questions are not answered
+        allAnswered = false;
       }
     }
     
     if (allAnswered) {
       console.log("Total score: " + totalScore);
     
-      // Update the user's document with the new score
+      // Update the user with the new score
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           db.collection("users").doc(user.uid).update({
@@ -136,7 +134,7 @@ function submitAnswers() {
 // Call retrieveQuestions() on page load
 window.onload = retrieveQuestions;
 
-// Add navigation buttons
+// Nav buttons
 var prevButton = document.getElementById("prev-button");
 var nextButton = document.getElementById("next-button");
 
