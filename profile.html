@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>My BCIT Project</title>
-    <meta name="comp1800 template" content="My 1800 App">
-    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <meta name="comp1800 template" content="My 1800 App" />
+    <link rel="icon" type="image/x-icon" href="/images/logo.png" />
 
     <!------------------------>
     <!-- Required meta tags -->
     <!------------------------>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!------------------------------------------>
     <!-- Bootstrap Library CSS JS CDN go here -->
     <!------------------------------------------>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
 
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -29,8 +34,12 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    />
     <link type="text/css" rel="stylesheet" href="/styles/profile.css" />
     <link type="text/css" rel="stylesheet" href="/styles/modal.css" />
 
@@ -39,10 +48,9 @@
     <!-------------------------------------------->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+  </head>
 
-</head>
-
-<body>
+  <body>
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
@@ -53,45 +61,79 @@
     <!-- the body of your page goes here -->
     <!-- stuff -->
     <div class="container flex-row mt-5">
-        <div class="col-12 text-end">
-            <button type="button" class="btn logout-btn"onclick="logout()">Logout</button>
-        </div>
-        <h1>Profile </h1>
-        <form>
-            <fieldset class="mb-3 px-" id="personalInfoFields" disabled>
-                <div class="form-group">
-                    <label >Name</label>
-                    <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label >Age</label>
-                    <input type="text" id="ageInput" class="form-control" placeholder="Enter your age">
-                </div>
-                <div class="form-group">
-                    <label >Gender</label>
-                    <input type="text" id="genderInput" class="form-control" placeholder="Enter your gender(optional)">
-                </div>
-            </fieldset>
-        </form>
-        <div class="d-flex justify-content-end">
-            <button type="button" class="btn edit-btn"onclick="editUserInfo()">Edit</button>
-            <button type="button" class="btn profile-save-btn"onclick="saveUserInfo()">Save</button>
-        </div>
-
-    <!-- The modal -->
+        <div class="container flex-row mt-5">
+            <div class="col-12 text-end">
+              <button type="button" class="btn logout-btn" onclick="logout()">Logout</button>
+            </div>
+        <!-- 기존 HTML 파일 내의 적절한 위치 -->
     <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <h2>Information saved</h2>
-        <p>Your information has been saved successfully.</p>
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Logout successfully.</p>
         </div>
-    </div>
-  
+      </div>
+      <h1>Profile</h1>
+      <form>
+        <fieldset class="mb-3 px-" id="personalInfoFields" disabled>
+          <div class="form-group">
+            <label>Name</label>
+            <input
+              type="text"
+              id="nameInput"
+              class="form-control"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="form-group">
+            <label>Age</label>
+            <input
+              type="text"
+              id="ageInput"
+              class="form-control"
+              placeholder="Enter your age"
+            />
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <input
+              type="text"
+              id="genderInput"
+              class="form-control"
+              placeholder="Enter your gender(optional)"
+            />
+          </div>
+        </fieldset>
+      </form>
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn edit-btn" onclick="editUserInfo()">
+          Edit
+        </button>
+        <button
+          type="button"
+          class="btn profile-save-btn"
+          onclick="saveUserInfo()"
+        >
+          Save
+        </button>
+      </div>
 
-        <br>
-        <br>
-        <ul id="collection-list"></ul>
-</div>
+      <!-- The modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <h2>Information saved</h2>
+          <p>Your information has been saved successfully.</p>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <div class="d-flex flex-row">
+        <div class="col-12">
+            <ul id="collection-list"></ul>
+        </div>
+      </div>
+    </div>
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
 
@@ -102,7 +144,5 @@
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/profile.js"></script>
     <!-- <script src="./scripts/script.js"></script> -->
-
-</body>
-
+  </body>
 </html>
