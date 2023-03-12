@@ -24,3 +24,39 @@
     color: #1B1212;
   }
 
+  .edit-btn {
+    margin-bottom: 5%;
+    margin-left: 6%;
+    margin-right: 4%;
+    font-size: 1.25rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    background-color: #10B92D;
+  }
+
+  .profile-save-btn {
+    margin-bottom: 5%;
+    font-size: 1.25rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    background-color: #109DB9;
+  }
+
+  .logout-btn {
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    background-color: #109DB9;
+  }

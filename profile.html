@@ -52,10 +52,13 @@
 
     <!-- the body of your page goes here -->
     <!-- stuff -->
-    <div class="container mt-5">
+    <div class="container flex-row mt-5">
+        <div class="col-12 text-end">
+            <button type="button" class="btn logout-btn"onclick="logout()">Logout</button>
+        </div>
         <h1>Profile </h1>
         <form>
-            <fieldset class="mb-3" id="personalInfoFields" disabled>
+            <fieldset class="mb-3 px-" id="personalInfoFields" disabled>
                 <div class="form-group">
                     <label >Name</label>
                     <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
@@ -69,12 +72,11 @@
                     <input type="text" id="genderInput" class="form-control" placeholder="Enter your gender(optional)">
                 </div>
             </fieldset>
-            <div class="d-flex justify-content-end mt-5">
-                <button type="button" class="btn btn-secondary"onclick="editUserInfo()">Edit</button>
-                <span style="width: 10px"></span>
-                <button type="button" class="btn btn-info"onclick="saveUserInfo()">Save</button>
-            </div>
         </form>
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn edit-btn"onclick="editUserInfo()">Edit</button>
+            <button type="button" class="btn profile-save-btn"onclick="saveUserInfo()">Save</button>
+        </div>
 
     <!-- The modal -->
     <div id="myModal" class="modal">
