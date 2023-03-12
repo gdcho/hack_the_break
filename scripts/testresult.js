@@ -18,6 +18,28 @@ function displayScoreInfo() {
 }
 displayScoreInfo();
 
-function displayComment() {
-    
+var modal = document.getElementById("save-modal");
+var backdrop = document.getElementById("backdrop");
+
+function openModal() {
+  //   modal.classList.add("show");
+  //   document.body.classList.add("modal-open");
+  backdrop.style.display = "block";
+  modal.style.display = "block";
+  modal.classList.add("show");
 }
+function closeModal() {
+  //   modal.classList.remove("show");
+  //   document.body.classList.remove("modal-open");
+  backdrop.style.display = "none";
+  modal.style.display = "none";
+  modal.classList.remove("show");
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    closeModal();
+    window.location.href="main.html";
+  }
+};

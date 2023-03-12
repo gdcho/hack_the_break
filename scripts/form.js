@@ -87,7 +87,7 @@ function onPrev() {
   currentQuestionIndex -= questionsPerPage;
   currentPageIndex -= 1;
   showQuestions(currentQuestionIndex);
-  }
+}
   
 function submitAnswers() {
     var forms = document.querySelectorAll("form");
