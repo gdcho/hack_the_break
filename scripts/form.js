@@ -17,13 +17,14 @@ function retrieveQuestions() {
       for (var i = 0; i < answers.length; i++) {
         var radioInput = document.createElement("input");
         radioInput.type = "radio";
+        radioInput.id = doc.id + "_" + i; 
         radioInput.name = doc.id;
         radioInput.value = answers[i].points;
         radioInput.classList.add("form-check-input");
 
         var label = document.createElement("label");
         label.innerHTML = answers[i].text;
-        label.classList.add("form-check-label");
+        label.setAttribute("for", radioInput.id); 
 
         var formCheck = document.createElement("div");
         formCheck.classList.add("form-check", "form-check-inline");
@@ -37,12 +38,12 @@ function retrieveQuestions() {
     });
     showQuestions(0);
 
-    // Move navigationContainer below radio buttons
     var navigationContainer = document.getElementById("navigation-container");
     var lastQuestionForm = document.querySelector(".question:last-of-type");
     lastQuestionForm.parentNode.insertBefore(navigationContainer, null);
   });
 }
+
 
 //show question based on index
 function showQuestions(startIndex) {
@@ -75,10 +76,10 @@ function showQuestions(startIndex) {
   });
 }
 
-
 function updateNavigation(startIndex, endIndex, totalQuestions) {
   var prevButton = document.getElementById("prev-button");
   var nextButton = document.getElementById("next-button");
+  var submitButtonVisible = (startIndex + questionsPerPage >= totalQuestions);
   prevButton.disabled = startIndex == 0;
   nextButton.disabled = endIndex == totalQuestions;
 
@@ -99,9 +100,12 @@ function updateNavigation(startIndex, endIndex, totalQuestions) {
   } else {
     nextButton.style.display = "inline-block";
   }
+
+  if (currentPageIndex == 4 && submitButton) {
+    navigationContainer.appendChild(submitButton);
+  }
+  
 }
-
-
 
 function onNext() {
   currentQuestionIndex += questionsPerPage;
@@ -180,5 +184,6 @@ navigationContainer.appendChild(prevButton);
 navigationContainer.appendChild(nextButton);
 if (currentPageIndex == 4 && submitButton) {
     navigationContainer.appendChild(submitButton);
+    
 }
 
