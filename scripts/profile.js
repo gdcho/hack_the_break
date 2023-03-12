@@ -85,7 +85,7 @@ firebase.auth().onAuthStateChanged((user) => {
             listItems.push(li);
           });
   
-          // Reverse the list order
+          // Reverse list order
           listItems.reverse().forEach((li) => {
             collectionList.insertBefore(li, collectionList.firstChild);
           });
