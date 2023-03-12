@@ -38,5 +38,13 @@
 }
 
 .navbar a:hover {
-  color: blue;
+  color: black;
+}
+
+.start-btn {
+  color: white;
+  background-color: #B91048;
+  width: 10em;
+  height: 3em;
+  border: none;
 }
