@@ -1,45 +1,38 @@
 /* Radio button container */
 .form-check {
-    margin: 0.5rem 0;
+    display: flex;
+    align-items: center; /* center the items vertically */
+    margin-left:5%;
   }
   
-  .form-check-input[type="radio"] {
-    margin-right: 0.5rem;
-    font-size: 1.3rem; /* increase the font size */
-    outline: red;
-  }
+  .form-check-input:checked {
+    background-color: #0dfd71;
+        border-color: #00ff64;
+    }
+    
+    .form-check-input[type="radio"] {
+        margin-right: 0.5rem;
+        font-size: 1.3rem; /* increase the font size */
+      }
   
   /* Inline radio buttons */
   .form-check-inline {
     display: inline-block;
-    margin-right: 1rem;
   }
   
-  .form-check label {
-    margin-top: 0.5rem;
+  .form-check-label {
+    margin-left: 0.05rem;
+  }
+
+  .form-check-input {
+    border: 2px solid rgba(16, 185, 129);
   }
   
-  /* Radio button selected state */
-  .form-check-input[type="radio"]:checked + .form-check-label {
-    font-weight: bold;
-    outline-color: green;
-  }
-  
-  /* Radio button focus state */
-  .form-check-input[type="radio"]:focus {
-    outline-color: green;
-  }
-  
-  .container {
-    overflow-x: auto; /* Enable horizontal scrolling */
-  }
-  
-  .d-flex {
-    flex-wrap: wrap; /* Allow elements to wrap to the next line */
-  }
-  
+
   #questions-form {
     margin-bottom: 30%;
+    margin-left: 3%;
+    margin-right: 3%;
     width: 100%; /* Set the width to 100% to fill the container */
   }
   
@@ -48,7 +41,10 @@
   }
   
   #prev-button, #next-button, #submit-button {
-    margin: 30px;
+    margin-top: 15%;
+    margin-bottom: 5%;
+    margin-left: 6%;
+    margin-right: 6%;
     font-size: 1.25rem;
     padding: 0.3rem 1rem;
     border-radius: 0.25rem;
