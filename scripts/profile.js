@@ -99,12 +99,12 @@ function logout() {
     .then(() => {
       // Sign-out successful.
       console.log("logging out user");
-      // 모달 열기
-      document.getElementById("myModal").style.display = "block";
-      // 2초 후 모달 닫기
+      // Open modal1
+      document.getElementById("modal1").style.display = "block";
+      // Close modal1 after 2 seconds
       setTimeout(function () {
-        document.getElementById("myModal").style.display = "none";
-        // main.html 로 이동
+        document.getElementById("modal1").style.display = "none";
+        // Redirect to main.html
         window.location.href = "index.html";
       }, 2000);
     })
@@ -112,3 +112,4 @@ function logout() {
       // An error happened.
     });
 }
+

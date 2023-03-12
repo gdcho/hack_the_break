@@ -21,6 +21,7 @@
   }
   HTML CSSResult Skip Results Iframe
 EDIT ON
+
 .wrapper {
     height: 100vh;
     /*This part is important for centering*/
@@ -28,7 +29,7 @@ EDIT ON
     place-items: center;
   }
   
-  .typing-demo {
+.typing-demo {
     width: 17ch;
     animation: typing 3s steps(30), blink .5s step-end infinite alternate;
     white-space: nowrap;
@@ -37,18 +38,19 @@ EDIT ON
     font-size: 1.9em;
   }
   
-  @keyframes typing {
+@keyframes typing {
     from {
       width: 0
     }
   }
       
-  @keyframes blink {
+@keyframes blink {
     0% {
       border-color: transparent
     }
   }
-  #indexbt {
+  
+#indexbt {
     width: 150px; /* set the width of the button */
     height: 50px; /* set the height of the button */
     display: flex; /* set the display property to flex */
@@ -63,5 +65,8 @@ EDIT ON
     color: #fff;
     background-color: #109DB9;
     margin-left: 90px; /* Add this property to move the button to the right */
+  }
+  .sentence2 {
+    margin: 0 40px; /* 10px의 좌우 마진 추가 */
   }
   

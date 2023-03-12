@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>My BCIT Project</title>
-    <meta name="comp1800 template" content="My 1800 App" />
+    <title>MINDSCAPE Profile</title>
+    <meta name="HacktheBreak" content="Imposter Syndrome" />
     <link rel="icon" type="image/x-icon" href="/images/logo.png" />
 
     <!------------------------>
@@ -44,10 +44,9 @@
     <link type="text/css" rel="stylesheet" href="/styles/modal.css" />
 
     <!-------------------------------------------->
-    <!-- Other libraries and styles of your own -->
+    <!-- Other libraries and styles of our own --->
     <!-------------------------------------------->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+
   </head>
 
   <body>
@@ -58,20 +57,20 @@
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
 
-    <!-- the body of your page goes here -->
-    <!-- stuff -->
+    <!-- the body of page goes here -->
     <div class="container flex-row mt-5">
         <div class="container flex-row mt-5">
             <div class="col-12 text-end">
               <button type="button" class="btn logout-btn" onclick="logout()">Logout</button>
             </div>
         <!-- 기존 HTML 파일 내의 적절한 위치 -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Logout successfully.</p>
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Logout successfully.</p>
+          </div>
         </div>
-      </div>
+        
       <h1>Profile</h1>
       <form>
         <fieldset class="mb-3 px-" id="personalInfoFields" disabled>
@@ -143,6 +142,5 @@
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/profile.js"></script>
-    <!-- <script src="./scripts/script.js"></script> -->
   </body>
 </html>
