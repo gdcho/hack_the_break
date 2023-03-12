@@ -124,6 +124,7 @@ function submitAnswers() {
           .catch((error) => {
             console.error("Error updating score: ", error);
           });
+          window.location.href = "/testresult.html";
         }
       });
     } else {
