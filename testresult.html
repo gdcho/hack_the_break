@@ -39,6 +39,11 @@
       rel="stylesheet"
       href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
     />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/styles/modal.css"
+    />
 
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
@@ -59,7 +64,7 @@
     <!-- stuff -->
 
     <div class="mt-5 px-2 d-flex flex-row text-center score-box">
-      <span class="col-12">Your Score is</span>
+      <span class="col-12">Your Score is: </span>
     </div>
 
     <div class="mt-3 px-2 d-flex flex-row text-center score-box">
@@ -110,33 +115,19 @@
     <div class="pt-5 d-flex flex-row justify-content-center">
       <button
         class="btn btn-primary btn-lg btn-block back-btn"
-        id="exit-btn"
-        onclick="redirect()"
-      >
-        Save and Exit
-      </button>
+        id="myBtn"
+        >Save and Exit</button>
     </div>
 
     <!-- Modal -->
-    <div
-      class="modal fade"
-      id="save-modal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-      style="display: block"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">Your Score is Saved in Your Profile.</div>
-        </div>
+    <div class="modal" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Your score is saved in your profile.</p>
+        <small>Click anywhere to continue</small>
       </div>
     </div>
-    <div
-      class="modal-backdrop fade show"
-      id="backdrop"
-      style="display: none"
-    ></div>
+  
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
