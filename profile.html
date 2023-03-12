@@ -31,6 +31,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/profile.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/modal.css" />
 
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
@@ -51,6 +53,7 @@
     <!-- the body of your page goes here -->
     <!-- stuff -->
     <div class="container mt-5">
+        <br>
         <h1>Profile </h1>
         <form>
             <fieldset class="mb-3" id="personalInfoFields" disabled>
@@ -64,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label >Gender</label>
-                    <input type="text" id="genderInput" class="form-control" placeholder="Enter your gender(optinal)">
+                    <input type="text" id="genderInput" class="form-control" placeholder="Enter your gender(optional)">
                 </div>
             </fieldset>
             <div class="d-flex justify-content-end mt-5">
@@ -73,7 +76,10 @@
                 <button type="button" class="btn btn-info"onclick="saveUserInfo()">Save</button>
             </div>
         </form>
-        <div id="collection-list"></div>
+
+        <br>
+        <br>
+        <ul id="collection-list"></ul>
 </div>
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
