@@ -41,6 +41,11 @@
       rel="stylesheet"
       href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
     />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/styles/modal.css"
+    />
 
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
@@ -68,10 +73,22 @@
         <p>Quote of the day:<span id="quote-goes-here"></span></p>
       </div>
     </div>
+    <br>
     <div class="container text-center">
-      <button type="button" class="btn btn-primary btn-lg start-btn">
+      <button type="button" class="btn btn-primary btn-lg btn-block back-btn start-btn"
+      id="myBtn">
         START TEST
       </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Instructions: For each statement, please put the number in the box that best indicates how true the statement is of you.  
+          It is best to give the first response that enters your mind rather than dwelling on each statement and thinking about it over and over. </p>
+        <small>Click anywhere to continue</small>
+      </div>
     </div>
 
     <!-- our own footer goes here-->

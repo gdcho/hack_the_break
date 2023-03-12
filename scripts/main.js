@@ -287,3 +287,22 @@ function displayCardsDynamically(collection) {
 }
 
 displayCardsDynamically("hikes"); //input param is the name of the collection
+
+// modal
+var modal = document.getElementById("myModal");
+// modal button
+var btn = document.getElementById("myBtn");
+// open modal on click
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+// close module click anywhere
+window.onclick = function(event) {
+  if (event.target == modal) {
+    closeModal();
+    window.location.href = "form.html";
+  }
+}
+function closeModal() {
+  modal.style.display = "none";
+}
