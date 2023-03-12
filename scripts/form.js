@@ -88,49 +88,50 @@ function onPrev() {
 }
   
 function submitAnswers() {
-    var forms = document.querySelectorAll("form");
-    
-    //Update score
-    var totalScore = 0;
-    var allAnswered = true; 
-    for (var i = 0; i < forms.length; i++) {
-      var selectedAnswer = forms[i].querySelector("input[type='radio']:checked");
-      if (selectedAnswer) {
-        var points = parseInt(selectedAnswer.value);
-        totalScore += points;
-      } else {
-        allAnswered = false;
-      }
-    }
-    
-    if (allAnswered) {
-      console.log("Total score: " + totalScore);
-    
-      // Update the user with the new score
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          db.collection("users").doc(user.uid).update({
-            totalScore,
-            timestamp: firebase.firestore.Timestamp.now()
-          })
-          db.collection("records").add({
-            userId: user.uid,
-            totalScore: totalScore,
-            timestamp: firebase.firestore.Timestamp.now()
-          })
-          .then(() => {
-            console.log("Score updated successfully");
-          })
-          .catch((error) => {
-            console.error("Error updating score: ", error);
-          });
-          window.location.href = "/testresult.html";
-        }
-      });
+  var forms = document.querySelectorAll("form");
+  
+  //Update score
+  var totalScore = 0;
+  var allAnswered = true; 
+  for (var i = 0; i < forms.length; i++) {
+    var selectedAnswer = forms[i].querySelector("input[type='radio']:checked");
+    if (selectedAnswer) {
+      var points = parseInt(selectedAnswer.value);
+      totalScore += points;
     } else {
-      alert("Please answer all questions before submitting.");
+      allAnswered = false;
     }
   }
+  
+  if (allAnswered) {
+    console.log("Total score: " + totalScore);
+  
+    // Update the user with the new score
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        db.collection("users").doc(user.uid).update({
+          totalScore,
+          timestamp: firebase.firestore.Timestamp.now()
+        })
+        db.collection("records").add({
+          userId: user.uid,
+          totalScore: totalScore,
+          timestamp: firebase.firestore.Timestamp.now()
+        })
+        .then(() => {
+          console.log("Score updated successfully");
+          window.location.href = 'testresult.html';
+        })
+        .catch((error) => {
+          console.error("Error updating score: ", error);
+        });
+      }
+    });
+  } else {
+    alert("Please answer all questions before submitting.");
+  }
+}
+
 
 // Call retrieveQuestions() on page load
 window.onload = retrieveQuestions;
