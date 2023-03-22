@@ -1,5 +1,5 @@
 # hackthebreak
-## Hack The Break 2023 Hackathon
+## Hack The Break 2023 Hackathon (https://devpost.com/software/mindscape-zskp3d?ref_content=user-portfolio&ref_feature=in_progress)
 Made by: David Cho, Woo Yong Kim, Juan Chung
 
 ## Viewing
