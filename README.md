@@ -1,4 +1,4 @@
-# hackthebreak
+# hackthebreak (https://hackthebreak-77859.web.app)
 ## Hack The Break 2023 Hackathon 
 ## Devpost (https://devpost.com/software/mindscape-zskp3d?ref_content=user-portfolio&ref_feature=in_progress)
 ## Firebase hosting (https://hackthebreak-77859.web.app) --> Mobile view (Inspect element)
